@@ -45,12 +45,10 @@ javascript:( function () {
 	function activateGodzamok(){
 		var buildingList = [0,2,3,4,5,0,0];
 		if(Game.hasGod('ruin')){
-			for( var theBuilding in buildingList ){
+			for(var theBuilding in buildingList){
 				var numCurrentBuilding = Game.ObjectsById[buildingList[theBuilding]].amount;
-				if( numCurrentBuilding >= 100 ){
-					Game.ObjectsById[buildingList[theBuilding]].sell(numCurrentBuilding);
-					Game.ObjectsById[buildingList[theBuilding]].buy(numCurrentBuilding);
-				}
+				Game.ObjectsById[buildingList[theBuilding]].sell(numCurrentBuilding);
+				Game.ObjectsById[buildingList[theBuilding]].buy(numCurrentBuilding);
 			}
 		}
 	}
