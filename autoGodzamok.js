@@ -18,7 +18,7 @@ Game.registerMod("autogodzamok1",{//this string needs to match the ID provided i
 	},
 });
 javascript:( function () {
-	var godzamokInterval = setInterval(setGodzamokInterval, 150);
+	var godzamokInterval = setInterval(setGodzamokInterval, 100);
 	function setGodzamokInterval(){
 		if(Game.hasGod('ruin')){
 			if( (
