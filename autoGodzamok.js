@@ -1,4 +1,4 @@
-Game.registerMod("autogodzamok",{//this string needs to match the ID provided in your info.txt
+Game.registerMod("autogodzamok1",{//this string needs to match the ID provided in your info.txt
 	init:function(){
 		//this function is called as soon as the mod is registered
 		//declare hooks here
