@@ -44,9 +44,9 @@ javascript:( function () {
 	//sell and rebuy buildings for click frenzy
 	function activateGodzamok(){
 		if(Game.hasGod('ruin')){
-			var numCurrentBuilding = Game.ObjectsById[2].amount;
-			Game.ObjectsById[2].sell(numCurrentBuilding);
-			Game.ObjectsById[2].buy(numCurrentBuilding);
+			var numCurrentBuilding = Game.Objects.Farm.amount;
+			Game.Objects.Farm.sell(numCurrentBuilding);
+			Game.Objects.Farm.buy(numCurrentBuilding);
 		}
 	}
 }());
