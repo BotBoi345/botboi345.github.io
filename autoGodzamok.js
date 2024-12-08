@@ -45,15 +45,11 @@ javascript:( function () {
 	function activateGodzamok(){
 		var buildingList = [0,2,3,4,5,0,0];
 		if(Game.hasGod('ruin')){
-			var farm = Game.ObjectsbyId[2].amount;
-			var mine = Game.ObjectsbyId[3].amount;
-			var factory = Game.ObjectsbyId[4].amount;
-			Game.ObjectsbyId[2].sell(farm);
-			Game.ObjectsbyId[2].buy(farm);
-			Game.ObjectsbyId[3].sell(mine);
-			Game.ObjectsbyId[3].buy(mine);
-			Game.ObjectsbyId[4].sell(factory);
-			Game.ObjectsbyId[4].sell(factory);
+			for(var theBuilding in buildingList){
+				var numCurrentBuilding = Game.ObjectsById[buildingList[theBuilding]].amount;
+				Game.ObjectsById[buildingList[theBuilding]].sell(numCurrentBuilding);
+				Game.ObjectsById[buildingList[theBuilding]].buy(numCurrentBuilding);
+			}
 		}
 	}
 }());
