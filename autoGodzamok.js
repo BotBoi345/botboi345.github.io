@@ -48,12 +48,20 @@ javascript:( function () {
 			for( var theBuilding in buildingList ){
 				var numCurrentBuilding = Game.ObjectsById[buildingList[theBuilding]].amount;
 				if( numCurrentBuilding >= 100 ){
+					var numCurrentBuildingByHundred = parseInt(numCurrentBuilding / 100);
+					// prevent over-buying 
+					if( numCurrentBuildingByHundred > 6 ){
+						numCurrentBuildingByHundred = 6;
+					}
 					l('storeBulkSell').click();
 					l('storeBulkMax').click();
 					Game.ObjectsById[buildingList[theBuilding]].sell(numCurrentBuilding);
 					// rebuy all buildings
 					l('storeBulkBuy').click();
-					Game.ObjectsById[buildingList[theBuilding]].buy(numCurrentBuilding);
+					l('storeBulk100').click();
+					for(var i = 0; i < numCurrentBuildingByHundred; i++){
+						Game.ObjectsById[buildingList[theBuilding]].buy();
+					}
 				}
 			}
 		}
