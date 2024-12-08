@@ -48,7 +48,6 @@ javascript:( function () {
 			for( var theBuilding in buildingList ){
 				var numCurrentBuilding = Game.ObjectsById[buildingList[theBuilding]].amount;
 				if (numCurrentBuilding > 99){
-					l('storeBulkBuy').click();
 					Game.ObjectsById[buildingList[theBuilding]].sell(numCurrentBuilding);
 					// rebuy all buildings
 					Game.ObjectsById[buildingList[theBuilding]].buy(numCurrentBuilding);
