@@ -43,16 +43,12 @@ javascript:( function () {
 	}
 	//sell and rebuy buildings for click frenzy
 	function activateGodzamok(){
-		var buildingList = [2,3,4,5];
+		var buildingList = [2,3,4,5,8,9];
 		if(Game.hasGod('ruin')){
 			for( var theBuilding in buildingList ){
 				var numCurrentBuilding = Game.ObjectsById[theBuilding].amount;
 				if (numCurrentBuilding > 99){
 					Game.ObjectsById[theBuilding].sell(numCurrentBuilding);
-				}
-			}
-			for( var theBuilding in buildingList ){
-				if (numCurrentBuilding > 99){
 					Game.ObjectsById[theBuilding].buy(numCurrentBuilding);
 				}
 			}
