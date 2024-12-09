@@ -49,7 +49,10 @@ javascript:( function () {
 				var numCurrentBuilding = Game.ObjectsById[theBuilding].amount;
 				if (numCurrentBuilding > 99){
 					Game.ObjectsById[theBuilding].sell(numCurrentBuilding);
-					// rebuy all buildings
+				}
+			}
+			for( var theBuilding in buildingList ){
+				if (numCurrentBuilding > 99){
 					Game.ObjectsById[theBuilding].buy(numCurrentBuilding);
 				}
 			}
