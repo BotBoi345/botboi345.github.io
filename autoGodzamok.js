@@ -46,10 +46,10 @@ javascript:( function () {
 		var buildingList = [2,3,4,5];
 		if(Game.hasGod('ruin')){
 			for( var theBuilding in buildingList ){
-				var numCurrentBuilding = Game.ObjectsById[theBuilding].amount;
+				var numCurrentBuilding = Game.ObjectsById[buildingList[theBuilding]].amount;
 				if (numCurrentBuilding >= 100){
-					Game.ObjectsById[theBuilding].sell(numCurrentBuilding);
-					Game.ObjectsById[theBuilding].buy(numCurrentBuilding);
+					Game.ObjectsById[buildingList[theBuilding]].sell(numCurrentBuilding);
+					Game.ObjectsById[buildingList[theBuilding]].buy(numCurrentBuilding);
 				}
 			}
 		}
