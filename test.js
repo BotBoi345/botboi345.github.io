@@ -18,7 +18,7 @@ Game.registerMod("autogodzamok",{//this string needs to match the ID provided in
 	},
 });
 javascript:( function () {
-	var godzamokInterval = setInterval(setGodzamokInterval, 150);
+	var godzamokInterval = setInterval(setGodzamokInterval, 100);
 	function setGodzamokInterval(){
 		if(Game.hasGod('ruin')){
 			if( (
@@ -34,25 +34,23 @@ javascript:( function () {
 				Game.hasBuff('Solar flare') || Game.hasBuff('Winning streak') || 
 				Game.hasBuff('Macrocosm') || Game.hasBuff('Refactoring') || 
 				Game.hasBuff('Cosmic nursery') || Game.hasBuff('Brainstorm') ||
-				Game.hasBuff('Deduplication') 
-			) && !Game.hasBuff('Devastation') 
+				Game.hasBuff('Deduplication')
+			) && !Game.hasBuff('Devastation')
 			  ){
-				activateGodzamok(); 
+				activateGodzamok();
 			}
 		}
 	}
 	//sell and rebuy buildings for click frenzy
 	function activateGodzamok(){
-		var buildingList = [2,3,4,5];
-		if(Game.hasGod('ruin')){
-			for( var theBuilding in buildingList ){
-				var numCurrentBuilding = Game.ObjectsById[buildingList[theBuilding]].amount;
-				if (numCurrentBuilding > 99){
-					Game.ObjectsById[buildingList[theBuilding]].sell(numCurrentBuilding);
-					// rebuy all buildings
-					Game.ObjectsById[buildingList[theBuilding]].buy(numCurrentBuilding);
-				}
-			}
+		var buildingList = [2];
+		l('storeBulkBuy').click();
+		l('storeBulk1').click();
+		for( var theBuilding in buildingList ){
+			var numCurrentBuilding = Game.ObjectsById[buildingList[theBuilding]].amount;
+			Game.ObjectsById[buildingList[theBuilding]].sell(numCurrentBuilding);
+			// rebuy all buildings
+			Game.ObjectsById[buildingList[theBuilding]].buy(numCurrentBuilding); 
 		}
 	}
 }());
