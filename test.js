@@ -43,14 +43,14 @@ javascript:( function () {
 	}
 	//sell and rebuy buildings for click frenzy
 	function activateGodzamok(){
-		var buildingList = [2,3,4,5];
+		var buildingList = [2,3,4,5,8,9];
 		l('storeBulkBuy').click();
 		l('storeBulk1').click();
 		for( var theBuilding in buildingList ){
 			var numCurrentBuilding = Game.ObjectsById[buildingList[theBuilding]].amount;
 			Game.ObjectsById[buildingList[theBuilding]].sell(numCurrentBuilding);
 			// rebuy all buildings
-			Game.ObjectsById[buildingList[theBuilding]].buy(numCurrentBuilding - 100); 
+			Game.ObjectsById[buildingList[theBuilding]].buy(numCurrentBuilding); 
 		}
 	}
 }());
