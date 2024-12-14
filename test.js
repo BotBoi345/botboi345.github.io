@@ -47,10 +47,10 @@ javascript:( function () {
 		l('storeBulkBuy').click();
 		l('storeBulk1').click();
 		for( var theBuilding in buildingList ){
-			var numCurrentBuilding = Game.ObjectsById[buildingList[theBuilding]].amount - 200;
+			var numCurrentBuilding = Game.ObjectsById[buildingList[theBuilding]].amount;
 			Game.ObjectsById[buildingList[theBuilding]].sell(numCurrentBuilding);
 			// rebuy all buildings
-			Game.ObjectsById[buildingList[theBuilding]].buy(numCurrentBuilding); 
+			Game.ObjectsById[buildingList[theBuilding]].buy(numCurrentBuilding - 100); 
 		}
 	}
 }());
