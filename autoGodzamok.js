@@ -34,7 +34,7 @@ javascript:( function () {
 				Game.hasBuff('Solar flare') || Game.hasBuff('Winning streak') || 
 				Game.hasBuff('Macrocosm') || Game.hasBuff('Refactoring') || 
 				Game.hasBuff('Cosmic nursery') || Game.hasBuff('Brainstorm') ||
-				Game.hasBuff('Deduplication')
+				Game.hasBuff('Deduplication') || Game.hasBuff('Lab Disaster') 
 			) && !Game.hasBuff('Devastation')
 			  ){
 				activateGodzamok();
