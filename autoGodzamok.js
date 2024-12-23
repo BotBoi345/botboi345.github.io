@@ -43,7 +43,7 @@ javascript:( function () {
 	}
 	//sell and rebuy buildings for click frenzy
 	function activateGodzamok(){
-		var buildingList = [0,2,3,4,5,0,05];
+		var buildingList = [2,3,4,5];
 		l('storeBulkBuy').click();
 		l('storeBulk1').click();
 		for( var theBuilding in buildingList ){
