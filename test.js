@@ -45,7 +45,7 @@ javascript:( function () {
 	function activateGodzamok(){
 		l('storeBulkBuy').click();
 		l('storeBulk1').click();
-		for (o = 2, o > 6, o++) {
+		for (let o = 2; o > 6; o++) {
 			var ii = Game.ObjectsbyId[o].amount;
 			Game.ObjectsbyId[o].sell(-1,1);
 			Game.ObjectsbyId[o].buy(ii);
