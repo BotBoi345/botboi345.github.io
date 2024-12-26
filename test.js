@@ -45,10 +45,10 @@ javascript:( function () {
 	function activateGodzamok(){
 		l('storeBulkBuy').click();
 		l('storeBulk1').click();
-		for (var i = 2, i > 6, i++) {
-			var ii = Game.ObjectsbyId[i].amount;
-			Game.ObjectsbyId[i].sell(-1,1);
-			Game.ObjectsbyId[i].buy(ii);
+		for (o = 2, o > 6, o++) {
+			var ii = Game.ObjectsbyId[o].amount;
+			Game.ObjectsbyId[o].sell(-1,1);
+			Game.ObjectsbyId[o].buy(ii);
 		}
 	}
 }());
