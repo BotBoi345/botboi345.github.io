@@ -45,10 +45,12 @@ javascript:( function () {
 	function activateGodzamok(){
 		l('storeBulkBuy').click();
 		l('storeBulk1').click();
-		for (let o = 2; o > 6; o++) {
-			var ii = Game.ObjectsbyId[o].amount;
-			Game.ObjectsbyId[o].sell(-1,1);
-			Game.ObjectsbyId[o].buy(ii);
+		var buildingList = [2,3,4,5];
+		for( var theBuilding in buildingList ){
+			var numCurrentBuilding = Game.ObjectsById[buildingList[theBuilding]].amount;
+			Game.ObjectsById[buildingList[theBuilding]].sell(-1,1);
+			// rebuy all buildings
+			Game.ObjectsById[buildingList[theBuilding]].buy(numCurrentBuilding); 
 		}
 	}
 }());
