@@ -1,3 +1,3 @@
-function activate() {
-        Game.Notify('loaded!', '', '', 2, 2);
+function activate(p) {
+        Game.Notify(p + 'loaded!', '', '', 2, 2);
 }
