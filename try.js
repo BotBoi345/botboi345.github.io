@@ -1,10 +1,9 @@
 function activate(p, q) {
-        var i = p;
-        var j = q;
-        Game.Notify(i + '' + j + ' loaded!', '', '', 2, 2);
-        while (Game.ObjectsbyId[i].amount < j) {
-                if (Game.cookies >= Game.ObjectsbyId[i]) {
-                        Game.ObjectsbyId[i].buy();
+        var i = Game.ObjectsbyId[p].amount;
+        Game.Notify(p + '' + q + ' loaded!', '', '', 2, 2);
+        while (i < q) {
+                if (Game.cookies >= i) {
+                        Game.ObjectsbyId[p].buy();
                 }
         }
 }
