@@ -1,5 +1,5 @@
 function activate(p, q) {
-        Game.Notify(p + q + ' loaded!', '', '', 2, 2);
+        Game.Notify(p + '' + q + ' loaded!', '', '', 2, 2);
         try {
                 while (Game.ObjectsbyId[p].amount < q) {
                         if (Game.cookies >= Game.ObjectsbyId[p]) {
@@ -8,6 +8,6 @@ function activate(p, q) {
                 }
         }
         catch(err) {
-                Game.Notify('Error', 'An error has occured. try again', '', 2, 2);
+                Game.Notify('Error', err.message, '', 2, 2);
         }
 }
