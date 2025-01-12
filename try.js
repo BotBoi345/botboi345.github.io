@@ -1,3 +1,4 @@
+Game.Notify(`AutoBuy Loaded!`, ``, [10,6], 2, 2);
 function activate(p, q) {
         try {
                 Game.Notify(`AutoBuy Started`, `Buying ${Game.ObjectsById[p].dname}s till ${q}`, [2,6], 2, 2);
