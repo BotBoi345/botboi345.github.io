@@ -8,7 +8,7 @@ function activate(p, q) {
                                 if (Game.cookies >= Game.ObjectsById[p].bulkPrice) { 
                                         Game.ObjectsById[p].buy();
                                 }
-                        }, 1000);
+                        }, 500);
                 }
                 
                 Game.Notify(`Done!`,'','',2,2);
