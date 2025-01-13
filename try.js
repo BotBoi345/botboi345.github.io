@@ -5,10 +5,7 @@ function activate(p, q) {
                 
                 while (Game.ObjectsById[p].amount < q) {
                         var buy = setInterval(function () {
-                                if (Game.cookies < Game.ObjectsById[p].bulkPrice) { 
-                                        continue;
-                                }
-                                else {
+                                if (Game.cookies >= Game.ObjectsById[p].bulkPrice) { 
                                         Game.ObjectsById[p].buy();
                                 }
                         }, 1000);
