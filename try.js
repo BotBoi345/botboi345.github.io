@@ -4,7 +4,7 @@ function activate(p, q) {
                 Game.Notify(`AutoBuy Started`, `Buying ${Game.ObjectsById[p].dname}s till ${q}`, [2,6], 2, 2);
                 
                 while (Game.ObjectsById[p] > q) {
-                        if (Game.cookies >= Game.ObjectsById.bulkPrice) {
+                        if (Game.cookies >= Game.ObjectsById[p].bulkPrice) {
                                 Game.ObjectsById[p].buy;
                         }
                         else { 
