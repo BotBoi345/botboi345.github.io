@@ -6,7 +6,7 @@ function activate(p, q) {
                 for (i = Game.ObjectsById[p].amount; i > q) {
                         if (Game.cookies >= Game.ObjectsById.bulkPrice) {
                                 Game.ObjectsById[p].buy;
-                                i = Game.ObjectsById[p],amount;
+                                i = Game.ObjectsById[p].amount;
                         }
                         else {
                                 continue;
