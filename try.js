@@ -1,15 +1,15 @@
 Game.Notify(`AutoBuy Loaded!`, `AutoBuy has been loaded successfully.`, [10,6], 2, 2);
 function activate(p, q) {
         try {
-                Game.Notify(`AutoBuy Started`, `Buying ${Game.ObjectsById[p].dname}s till ${q}`, [2,6], 2, 2);
+                Game.Notify(`AutoBuy Started`,`Buying ${Game.ObjectsById[p].dname}s till ${q}`,[2,6],2,2); 
+
+                function pass () {
+                        p = 1;
+                }
                 
-                while (Game.ObjectsById[p].amount < q) {
-                        if (Game.cookies >= Game.ObjectsById[p].bulkPrice) {
-                                Game.ObjectsById[p].buy;
-                        }
-                        else { 
-                                continue; 
-                        }
+                for (i = Game.ObjectsById[p].amount; i < q; setTimeout(pass, 1000)) {
+                        if (Game.cookies >= Game.ObjectsById[p].bulkPrice) { Game.ObjectsById[p].buy; }
+                        else { continue; }
                 }
                 
                 Game.Notify(`Done!`,'','',2,2);
