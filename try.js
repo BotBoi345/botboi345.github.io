@@ -3,8 +3,14 @@ function activate(p, q) {
         try {
                 Game.Notify(`AutoBuy Started`,`Buying ${Game.ObjectsById[p].dname}s till ${q}`,[2,6],2,2); 
                 
+                function buy() {
+                        if (Game.cookies >= Game.ObjectById[p].bulkPrice) {
+                                Game.ObjectsById[p].buy;
+                        }
+                }
+                
                 while (Game.ObjectsById[p].amount < q) {
-                        setTimeout(function () {if (Game.cookies >= Game.ObjectsById[p].bulkPrice) { Game.ObjectsById[p].buy; }}, 500);
+                        setInterval(buy, 500);
                 }
                 
                 Game.Notify(`Done!`,'','',2,2);
