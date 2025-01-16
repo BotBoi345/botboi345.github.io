@@ -10,7 +10,7 @@ function activate(p, q) {
                 }
                 
                 while (Game.ObjectsById[p].amount < q) {
-                        setInterval(buy, 500);
+                        var autobuy = setInterval(buy, 500);
                 }
                 
                 Game.Notify(`Done!`,'','',2,2);
