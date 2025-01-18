@@ -3,13 +3,19 @@ function activate(p, q) {
         try {
                 Game.Notify(`AutoBuy Started`,`Buying ${Game.ObjectsById[p].dname}s till ${q}`,[2,6],2,2); 
 
-                while (Game.ObjectsById[p].amount < q) {
-                        if (Game.cookies >= Game.ObjectsById[p].bulkPrice) {
-                                Game.ObjectsById[p].buy();
+                const buy = setInterval(autobuy, 500);
+
+                function autobuy() {
+                        if (Game.ObjectsById[p].amount >= q) {
+                                clearInterval(buy); 
+                                Game.Notify(`Done!`,'','',2,2); 
+                        }
+                        else {
+                                if (Game.cookies >= Game.ObjectsById[p].bulkPrice) {
+                                        Game.ObjectsById[p].buy();
+                                }
                         }
                 }
-
-                Game.Notify(`Done!`,'','',2,2); 
         }
         catch(err) {
                 Game.Notify(`Error Occured`, `${err.message}. Try Again...`, [16,5], 2, 2);
