@@ -9,7 +9,7 @@ function activate(p, q) {
                         if (Game.ObjectsById[p].amount >= q) {clearInterval(buy); }
                         else {
                                 Game.Notify(`AutoBuy Activated`,``,``,2,2);
-                                Game.ObjectsById[p].buy; 
+                                Game.ObjectsById[p].buy(); 
                         }
                 }
         
