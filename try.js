@@ -3,7 +3,7 @@ function activate(p, q) {
         try {
                 Game.Notify(`AutoBuy Started`,`Buying ${Game.ObjectsById[p].dname}s till ${q}`,[2,6],2,2); 
 
-                const buy = setInterval(autobuy, 1000);
+                const buy = setInterval(autobuy, 500);
 
                 function autobuy() {
                         if (Game.ObjectsById[p].amount >= q) {
