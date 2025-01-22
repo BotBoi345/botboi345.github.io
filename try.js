@@ -26,12 +26,14 @@ try {
                                 if (Game.cookies >= Game.ObjectsById[i].bulkPrice) {
                                         Game.ObjectsById[i].buy;
                                 }
+                        }
+                        for (i = 19; i != 0; i--) {
                                 Game.buyBulk = 10;
                                 if (Game.cookies >= Game.ObjectsById[i].bulkPrice) {
                                         Game.ObjectsById[i].buy;
                                 }
-                                Game.buyBulk = 1;
                         }
+                        Game.buyBulk = 1;
                 }
 
                 function stop() {
