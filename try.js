@@ -24,13 +24,13 @@ try {
 
                 function buybuy() {
                         var buildingList = [19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0];
-                        for (var theBuilding in buildingList) {
+                        for (let theBuilding in buildingList) {
                                 Game.buyBulk = 100;
                                 if (Game.cookies >= Game.ObjectsById[buildingList[theBuilding]].bulkPrice) {
                                         Game.ObjectsById[buildingList[theBuilding]].buy();
                                 }
                         }
-                        for (var theBuilding in buildingList) {
+                        for (let theBuilding in buildingList) {
                                 Game.buyBulk = 10;
                                 if (Game.cookies >= Game.ObjectsById[buildingList[theBuilding]].bulkPrice) {
                                         Game.ObjectsById[buildingList[theBuilding]].buy();
