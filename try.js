@@ -33,6 +33,7 @@ try {
                                         Game.ObjectsById[value].buy();
                                         Game.Notify(`Bought ${Game.ObjectsById[value].dname}`s,`Bought 100 ${Game.ObjectsById[value].dname}s`,[2,6],2,2);
                                 }
+                                else {continue; }
                         }
                         buildingList.forEach(buybuybuybuy);
                         function buybuybuybuy(value) {
@@ -41,6 +42,7 @@ try {
                                         Game.ObjectsById[value].buy();
                                         Game.Notify(`Bought ${Game.ObjectsById[value].dname}s`,`Bought 10 ${Game.ObjectsById[value].dname}s`,[2,6],2,2);
                                 }
+                                else {continue; }
                         }
                         Game.buyBulk = 1;
                         i++;
