@@ -18,19 +18,22 @@ try {
                 }
         }
         function buy10() {
+                Game.Notify(`Buy10 Started`,`Buying All Buildings I Can!`,[2,6],2,2);
+                
                 const buyten = setInterval(buybuy, 1000);
 
                 function buybuy() {
-                        for (i = 19; i != 0; i--) {
+                        var buildingList = [19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0];
+                        for (var theBuilding in buildingList) {
                                 Game.buyBulk = 100;
-                                if (Game.cookies >= Game.ObjectsById[i].bulkPrice) {
-                                        Game.ObjectsById[i].buy;
+                                if (Game.cookies >= Game.ObjectsById[buildingList[theBuilding]].bulkPrice) {
+                                        Game.ObjectsById[buildingList[theBuilding]].buy();
                                 }
                         }
-                        for (i = 19; i != 0; i--) {
+                        for (var theBuilding in buildingList) {
                                 Game.buyBulk = 10;
-                                if (Game.cookies >= Game.ObjectsById[i].bulkPrice) {
-                                        Game.ObjectsById[i].buy;
+                                if (Game.cookies >= Game.ObjectsById[buildingList[theBuilding]].bulkPrice) {
+                                        Game.ObjectsById[buildingList[theBuilding]].buy();
                                 }
                         }
                         Game.buyBulk = 1;
