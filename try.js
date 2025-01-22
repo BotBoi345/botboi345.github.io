@@ -28,12 +28,14 @@ try {
                                 Game.buyBulk = 100;
                                 if (Game.cookies >= Game.ObjectsById[buildingList[theBuilding]].bulkPrice) {
                                         Game.ObjectsById[buildingList[theBuilding]].buy();
+                                        Game.Notify(`Bought ${Game.ObjectsById[buildingList[theBuilding]].dname}`,`Bought 100 of ${Game.ObjectsById[buildingList[theBuilding]].dname}`,[2,6],2,2);
                                 }
                         }
                         for (let theBuilding in buildingList) {
                                 Game.buyBulk = 10;
                                 if (Game.cookies >= Game.ObjectsById[buildingList[theBuilding]].bulkPrice) {
                                         Game.ObjectsById[buildingList[theBuilding]].buy();
+                                        Game.Notify(`Bought ${Game.ObjectsById[buildingList[theBuilding]].dname}`,`Bought 10 of ${Game.ObjectsById[buildingList[theBuilding]].dname}`,[2,6],2,2);
                                 }
                         }
                         Game.buyBulk = 1;
@@ -41,6 +43,7 @@ try {
 
                 function stop() {
                         clearInterval(buybuy);
+                        Game.Notify(`Buy10 Stopped`,`Stopped Buying All Buildings I Can!`,[2,6],2,2);
                 }
         }
 }
