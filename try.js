@@ -17,6 +17,27 @@ try {
                         }
                 }
         }
+        function buy10() {
+                const buyten = setInterval(buybuy, 1000);
+
+                function buybuy() {
+                        for (i = 19; i != 0; i--) {
+                                Game.buyBulk = 100;
+                                if (Game.cookies >= Game.ObjectsById[i].bulkPrice) {
+                                        Game.ObjectsById[i].buy;
+                                }
+                                Game.buyBulk = 10;
+                                if (Game.cookies >= Game.ObjectsById[i].bulkPrice) {
+                                        Game.ObjectsById[i].buy;
+                                }
+                                Game.buyBulk = 1;
+                        }
+                }
+
+                function stop() {
+                        clearInterval(buybuy);
+                }
+        }
 }
 catch(err) {
         Game.Notify(`Error Occured`, `${err.message}. Try Again...`, [16,5], 2, 2);
