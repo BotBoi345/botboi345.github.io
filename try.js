@@ -26,25 +26,19 @@ try {
 
                 function buybuy() {
                         const buildingList = [19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0];
-                        buildingList.forEach(buybuybuy);
-                        function buybuybuy(value) {
-                                Game.buyBulk = 100;
-                                if (Game.cookies >= Game.ObjectsById[value].bulkPrice) {
-                                        Game.ObjectsById[value].buy();
-                                        Game.Notify(`Bought ${Game.ObjectsById[value].dname}s`,`Bought 100 ${Game.ObjectsById[value].dname}s`,[2,6],2,2);
-                                }
-                        }
+                        l('storeBulkBuy').click();
+                        l('storeBulk1').click();
                         buildingList.forEach(buybuybuybuy);
                         function buybuybuybuy(value) {
-                                Game.buyBulk = 10;
+                                 l('storeBulk10').click();
                                 if (Game.cookies >= Game.ObjectsById[value].bulkPrice) {
                                         Game.ObjectsById[value].buy();
-                                        Game.Notify(`Bought ${Game.ObjectsById[value].dname}s`,`Bought 10 ${Game.ObjectsById[value].dname}s`,[2,6],2,2);
+                                        Game.Notify(`Bought 10 ${Game.ObjectsById[value].dname}s`,``, ``,2,2);
                                 }
                         }
-                        Game.buyBulk = 1;
+                        l('storeBulk1').click();
                         i++;
-                        if (i == 20) {
+                        if (i == 2) {
                                 Game.Notify(`Buy10 Stopped`,`Stopped Buying All Buildings I Can!`,[2,6],2,2);
                                 clearInterval(buybuy);
                         }
