@@ -31,7 +31,7 @@ try {
                                 Game.buyBulk = 100;
                                 if (Game.cookies >= Game.ObjectsById[value].bulkPrice) {
                                         Game.ObjectsById[value].buy();
-                                        Game.Notify(`Bought ${Game.ObjectsById[value].dname}`s,`Bought 100 ${Game.ObjectsById[value].dname}s`,[2,6],2,2);
+                                        Game.Notify(`Bought ${Game.ObjectsById[value].dname}s`,`Bought 100 ${Game.ObjectsById[value].dname}s`,[2,6],2,2);
                                 }
                                 else {continue; }
                         }
