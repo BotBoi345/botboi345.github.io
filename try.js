@@ -30,16 +30,16 @@ try {
                         l('storeBulk1').click();
                         buildingList.forEach(buybuybuybuy);
                         function buybuybuybuy(value) {
-                                 l('storeBulk10').click();
+                                l('storeBulk10').click();
                                 if (Game.cookies >= Game.ObjectsById[value].bulkPrice) {
                                         Game.ObjectsById[value].buy();
-                                        Game.Notify(`Bought 10 ${Game.ObjectsById[value].dname}s`,``, ``,2,2);
+                                        Game.Notify(`Bought 10 ${Game.ObjectsById[value].dname}s`,'','',1,1);
                                 }
                         }
                         l('storeBulk1').click();
                         i++;
                         if (i == 2) {
-                                Game.Notify(`Buy10 Stopped`,`Stopped Buying All Buildings I Can!`,[2,6],2,2);
+                                Game.Notify(`Buy10 Stopped`,`Stopped Buying All Buildings I Can!`,[2,6],5,5);
                                 clearInterval(buyten);
                         }
                 }
