@@ -40,7 +40,7 @@ try {
                         i++;
                         if (i == 2) {
                                 Game.Notify(`Buy10 Stopped`,`Stopped Buying All Buildings I Can!`,[2,6],2,2);
-                                clearInterval(buybuy);
+                                clearInterval(buyten);
                         }
                 }
         }
