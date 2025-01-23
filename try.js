@@ -17,10 +17,10 @@ try {
                         }
                 }
         }
-        function buy10() {
+        function buy10(s) {
                 Game.Notify(`BuyAll Started`,`Buying All Buildings I Can!`,[2,6],2,2);
                 
-                const buying = setInterval(buyall, 2000);
+                const buying = setInterval(buyall, 1000);
 
                 var i = 0;
 
@@ -36,7 +36,7 @@ try {
                                 }
                         }
                         i++;
-                        if (i == 20) {
+                        if (i == s) {
                                 Game.Notify(`BuyAll Stopped`,`Stopped Buying All Buildings I Can!`,[2,6],5,5);
                                 clearInterval(buying);
                         }
