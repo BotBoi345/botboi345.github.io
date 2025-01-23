@@ -1,3 +1,4 @@
+Game.Notify('autoGodzamok loaded!', '', '', 2, 2);
 var godzamokInterval = setInterval(setGodzamokInterval, 100);
 function setGodzamokInterval(){
 	if(Game.hasGod('ruin')){
