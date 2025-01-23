@@ -20,7 +20,7 @@ try {
         function buy10() {
                 Game.Notify(`BuyAll Started`,`Buying All Buildings I Can!`,[2,6],2,2);
                 
-                const buying = setInterval(buyall, 5000);
+                const buying = setInterval(buyall, 2000);
 
                 var i = 0;
 
