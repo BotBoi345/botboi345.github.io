@@ -29,17 +29,11 @@ function activateGodzamok(){
 	
 	var buildingList = [2,3,4,5];
 	
-	var faarm = Game.Objects.Farm.amount;
-	var miines = Game.Objects.Mine.amount;
-	var baanks = Game.Objects.Bank.amount;
-	var faactory = Game.Objects.Factory.amount;
-	
-	for( var theBuilding in buildingList ){
-		Game.ObjectsById[buildingList[theBuilding]].sell(-1,1);
+	buildingList.forEach(buy);
+
+	function buy(value) {
+		var numCurrentBuilding = Game.ObjectsById[value].amount;
+		Game.ObjectsById[value].sell(numCurrentBuilding);
+		Game.ObjectsById[value].buy(numCurrentBuilding);
 	}
-	
-	Game.Objects.Farm.buy(faarm);
-	Game.Objects.Mine.buy(miines);
-	Game.Objects.Factory.buy(faactory);
-	Game.Objects.Bank.buy(baanks);
 }
