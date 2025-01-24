@@ -35,17 +35,19 @@ try {
                         function checkbuy(value) {
                                 l('storeBulkBuy').click();
                                 l('storeBulk1').click();
+
+                                var p = 0;
                                 
                                 if (Game.cookies >= Game.ObjectsById[value].bulkPrice) {p = 1; }
                                 else {p = 0; }
 
-                                if (p = 1) {
+                                if (p == 1) {
                                         Game.ObjectsById[value].buy();
                                         Game.Notify(`Bought ${Game.ObjectsById[value].dname}s`,'','',1,1);
                                 }
                         }
 
-                        if (i = s) {
+                        if (i == s) {
                                 Game.Notify(`BuyAll Stopped`,`Stopped Buying All Buildings I Can!`,[2,6],5,5);
                                 clearInterval(buying);
                         }
