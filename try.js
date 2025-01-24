@@ -17,34 +17,41 @@ try {
                         }
                 }
         }
+
+        // second function
         function buy10(s) {
+                if (s !== 0) {s = 1; }
+                
                 Game.Notify(`BuyAll Started`,`Buying All Buildings I Can!`,[2,6],2,2);
                 
                 const buying = setInterval(buyall, 1000);
 
-                var i = 0;
-
                 function buyall() {
+                        
                         const buildingList = [19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0];
+                                
                         buildingList.forEach(checkbuy);
+                                
                         function checkbuy(value) {
                                 l('storeBulkBuy').click();
                                 l('storeBulk1').click();
-                                if (Game.cookies >= Game.ObjectsById[value].bulkPrice) {
+                                
+                                if (Game.cookies >= Game.ObjectsById[value].bulkPrice) {p = 1; }
+                                else {p = 0; }
+
+                                if (p = 1) {
                                         Game.ObjectsById[value].buy();
                                         Game.Notify(`Bought ${Game.ObjectsById[value].dname}s`,'','',1,1);
                                 }
                         }
-                        i++;
-                        if (i == s) {
+
+                        if (i = s) {
                                 Game.Notify(`BuyAll Stopped`,`Stopped Buying All Buildings I Can!`,[2,6],5,5);
                                 clearInterval(buying);
                         }
-                }
-
-                function stop() {
-                        Game.Notify(`BuyAll Stopped`,`Stopped Buying All Buildings I Can!`,[2,6],5,5);
-                        clearInterval(buying);
+                        else {
+                                i++;
+                        }
                 }
         }
 }
