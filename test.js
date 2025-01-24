@@ -27,7 +27,7 @@ function activateGodzamok(){
 	l('storeBulkBuy').click();
 	l('storeBulk1').click();
 	
-	var buildingList = [2,3,4,5];
+	var buildingList = [0,2,3,4,5,0,0];
 	
 	buildingList.forEach(buy);
 
