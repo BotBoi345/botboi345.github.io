@@ -25,20 +25,23 @@ function setGodzamokInterval(){
 	}
 }
 
-//sell and rebuy buildings
-
+//sell and rebuy buildings for click frenzy
 function activateGodzamok(){
-	
 	var buildingList = [0,2,3,4,5,0,0];
-	
-	for( var theBuilding in buildingList ){
-		var numCurrentBuilding = Game.ObjectsById[buildingList[theBuilding]].amount;
-		l('storeBulkSell').click();
-		l('storeBulkMax').click();
-		Game.ObjectsById[buildingList[theBuilding]].sell(numCurrentBuilding);
-		// rebuy all buildings
-		l('storeBulkBuy').click();
-		l('storeBulk1').click();
-		Game.ObjectsById[buildingList[theBuilding]].buy(numCurrentBuilding); 
+	if(Game.hasGod('ruin')){
+		for( var theBuilding in buildingList ){
+			var numCurrentBuilding = Game.ObjectsById[buildingList[theBuilding]].amount;
+
+			if( numCurrentBuilding >= 100 ){
+				l('storeBulkSell').click();
+				l('storeBulkMax').click();
+				Game.ObjectsById[buildingList[theBuilding]].sell(numCurrentBuilding);
+
+				// rebuy all buildings
+				l('storeBulkBuy').click();
+				l('storeBulk100').click();
+				Game.ObjectsById[buildingList[theBuilding]].buy(numCurrentBuilding);
+			}
+		}
 	}
 }
