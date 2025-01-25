@@ -29,11 +29,10 @@ function activateGodzamok(){
 	
 	var buildingList = [0,2,3,4,5,0,0];
 	
-	buildingList.forEach(buy);
-
-	function buy(value) {
-		var numCurrentBuilding = Game.ObjectsById[value].amount;
-		Game.ObjectsById[value].sell(numCurrentBuilding);
-		Game.ObjectsById[value].buy(numCurrentBuilding);
+	for( var theBuilding in buildingList ){
+		var numCurrentBuilding = Game.ObjectsById[buildingList[theBuilding]].amount;
+		Game.ObjectsById[buildingList[theBuilding]].sell(numCurrentBuilding);
+		// rebuy all buildings
+		Game.ObjectsById[buildingList[theBuilding]].buy(numCurrentBuilding); 
 	}
 }
