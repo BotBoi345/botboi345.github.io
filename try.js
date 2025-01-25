@@ -35,13 +35,8 @@ try {
                         function checkbuy(value) {
                                 l('storeBulkBuy').click();
                                 l('storeBulk1').click();
-
-                                var p = 0;
                                 
-                                if (Game.cookies >= Game.ObjectsById[value].bulkPrice) {p = 1; }
-                                else {p = 0; }
-
-                                if (p == 1) {
+                                if (Game.cookies >= Game.ObjectsById[value].bulkPrice) {
                                         Game.ObjectsById[value].buy();
                                         Game.Notify(`Bought ${Game.ObjectsById[value].dname}s`,'','',1,1);
                                 }
