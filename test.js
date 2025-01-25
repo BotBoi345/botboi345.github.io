@@ -1,5 +1,7 @@
 Game.Notify('autoGodzamok loaded!', '', '', 2, 2);
+
 var godzamokInterval = setInterval(setGodzamokInterval, 100);
+
 function setGodzamokInterval(){
 	if(Game.hasGod('ruin')){
 		if( (
@@ -22,7 +24,9 @@ function setGodzamokInterval(){
 		}
 	}
 }
+
 //sell and rebuy buildings
+
 function activateGodzamok(){
 	l('storeBulkBuy').click();
 	l('storeBulk1').click();
