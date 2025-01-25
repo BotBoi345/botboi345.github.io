@@ -41,6 +41,7 @@ function activateGodzamok(){
 		
 		for( var theBuilding in buildingList ){
 			Game.ObjectsById[buildingList[theBuilding]].buy();
+			Game.Notify(`Sold ${Game.ObjectsById[buildingList[theBuilding]].dname}s`,'','',1,1);
 		}
 
 		// rebuy all buildings
