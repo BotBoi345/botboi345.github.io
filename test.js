@@ -28,15 +28,17 @@ function setGodzamokInterval(){
 //sell and rebuy buildings
 
 function activateGodzamok(){
-	l('storeBulkBuy').click();
-	l('storeBulk1').click();
 	
 	var buildingList = [0,2,3,4,5,0,0];
 	
 	for( var theBuilding in buildingList ){
 		var numCurrentBuilding = Game.ObjectsById[buildingList[theBuilding]].amount;
+		l('storeBulkSell').click();
+		l('storeBulkMax').click();
 		Game.ObjectsById[buildingList[theBuilding]].sell(numCurrentBuilding);
 		// rebuy all buildings
+		l('storeBulkBuy').click();
+		l('storeBulk1').click();
 		Game.ObjectsById[buildingList[theBuilding]].buy(numCurrentBuilding); 
 	}
 }
