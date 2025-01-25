@@ -40,12 +40,13 @@ function activateGodzamok(){
 		l('storeBulkMax').click();
 		
 		for( var theBuilding in buildingList ){
-			Game.ObjectsById[buildingList[theBuilding]].sell(-1,1);
+			Game.ObjectsById[buildingList[theBuilding]].buy();
 		}
 
 		// rebuy all buildings
 		l('storeBulkBuy').click();
-		l('storeBulk100').click();
+		l('storeBulk1').click();
+		
 		Game.ObjectsById[0].buy(zero);
 		Game.ObjectsById[2].buy(twoo);
 		Game.ObjectsById[3].buy(thre);
