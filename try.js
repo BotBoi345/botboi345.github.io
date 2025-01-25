@@ -18,13 +18,17 @@ try {
                 }
         }
 
+        function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
         // second function
-        function buy10(s) {
+        async function buy10(s) {
                 if (s !== 0) {s = 1; }
                 
                 Game.Notify(`BuyAll Started`,`Buying All Buildings I Can!`,[2,6],2,2);
                 
-                const buying = setInterval(buyall, 1000);
+                const buying = setInterval(buyall, 2100);
 
                 function buyall() {
                         
@@ -32,7 +36,7 @@ try {
                                 
                         buildingList.forEach(checkbuy);
                                 
-                        function checkbuy(value) {
+                        async function checkbuy(value) {
                                 l('storeBulkBuy').click();
                                 l('storeBulk1').click();
                                 
@@ -40,6 +44,7 @@ try {
                                         Game.ObjectsById[value].buy();
                                         Game.Notify(`Bought ${Game.ObjectsById[value].dname}s`,'','',1,1);
                                 }
+                                await sleep(50);
                         }
 
                         if (i == s) {
