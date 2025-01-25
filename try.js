@@ -36,7 +36,7 @@ try {
                                 
                         buildingList.forEach(checkbuy);
                                 
-                        async function checkbuy(value) {
+                        function checkbuy(value) {
                                 l('storeBulkBuy').click();
                                 l('storeBulk1').click();
                                 
