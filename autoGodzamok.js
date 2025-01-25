@@ -48,8 +48,12 @@ javascript:( function () {
 		l('storeBulk1').click();
 		for( var theBuilding in buildingList ){
 			var numCurrentBuilding = Game.ObjectsById[buildingList[theBuilding]].amount;
+			l('storeBulkSell').click();
+			l('storeBulkMax').click();
 			Game.ObjectsById[buildingList[theBuilding]].sell(numCurrentBuilding);
 			// rebuy all buildings
+			l('storeBulkBuy').click();
+			l('storeBulk1').click();
 			Game.ObjectsById[buildingList[theBuilding]].buy(numCurrentBuilding); 
 		}
 	}
