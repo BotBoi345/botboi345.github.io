@@ -55,7 +55,7 @@ function activateGodzamok(){
 			Game.ObjectsById[4].buy();
 		});
 
-		let bank = new Promise (function(myResolve,myReject) => {
+		let bank = new Promise (function(myResolve,myReject) {
 			Game.ObjectsById[5].buy();
 		});
 
