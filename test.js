@@ -39,19 +39,19 @@ function activateGodzamok(){
 		l('storeBulkSell').click();
 		l('storeBulkMax').click();
 
-		let cursor = new Promise (function(myResolve,myReject) => {
+		let cursor = new Promise (function(myResolve,myReject) {
 			Game.ObjectsById[0].buy();
 		});
 
-		let farm = new Promise (function(myResolve,myReject) => {
+		let farm = new Promise (function(myResolve,myReject) {
 			Game.ObjectsById[2].buy();
 		});
 
-		let mine = new Promise (function(myResolve,myReject) => {
+		let mine = new Promise (function(myResolve,myReject) {
 			Game.ObjectsById[3].buy();
 		});
 
-		let factory = new Promise (function(myResolve,myReject) => {
+		let factory = new Promise (function(myResolve,myReject) {
 			Game.ObjectsById[4].buy();
 		});
 
