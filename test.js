@@ -38,12 +38,28 @@ function activateGodzamok(){
 
 		l('storeBulkSell').click();
 		l('storeBulkMax').click();
-		
-		Game.ObjectsById[0].buy();
-		Game.ObjectsById[2].buy();
-		Game.ObjectsById[3].buy();
-		Game.ObjectsById[4].buy();
-		Game.ObjectsById[5].buy();
+
+		let cursor = new Promise (function(myResolve,myReject) => {
+			Game.ObjectsById[0].buy();
+		});
+
+		let farm = new Promise (function(myResolve,myReject) => {
+			Game.ObjectsById[2].buy();
+		});
+
+		let mine = new Promise (function(myResolve,myReject) => {
+			Game.ObjectsById[3].buy();
+		});
+
+		let factory = new Promise (function(myResolve,myReject) => {
+			Game.ObjectsById[4].buy();
+		});
+
+		let bank = new Promise (function(myResolve,myReject) => {
+			Game.ObjectsById[5].buy();
+		});
+
+		Promise.all([cursor,farm,mine,factory,bank]);
 
 		// rebuy all buildings
 		l('storeBulkBuy').click();
