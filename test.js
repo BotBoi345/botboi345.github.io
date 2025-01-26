@@ -29,46 +29,19 @@ function setGodzamokInterval(){
 function activateGodzamok(){
 	var buildingList = [0,2,3,4,5,0,0];
 	if(Game.hasGod('ruin')){
-		
-		var zero = Game.ObjectsById[0].amount;
-		var twoo = Game.ObjectsById[2].amount;
-		var thre = Game.ObjectsById[3].amount;
-		var four = Game.ObjectsById[4].amount;
-		var five = Game.ObjectsById[5].amount;
+		for( var theBuilding in buildingList ){
+			var numCurrentBuilding = Game.ObjectsById[buildingList[theBuilding]].amount;
 
-		l('storeBulkSell').click();
-		l('storeBulkMax').click();
+			if( numCurrentBuilding >= 100 ){
+				l('storeBulkSell').click();
+				l('storeBulkMax').click();
+				Game.ObjectsById[buildingList[theBuilding]].sell(numCurrentBuilding);
 
-		let cursor = new Promise (function(myResolve,myReject) {
-			Game.ObjectsById[0].buy();
-		});
-
-		let farm = new Promise (function(myResolve,myReject) {
-			Game.ObjectsById[2].buy();
-		});
-
-		let mine = new Promise (function(myResolve,myReject) {
-			Game.ObjectsById[3].buy();
-		});
-
-		let factory = new Promise (function(myResolve,myReject) {
-			Game.ObjectsById[4].buy();
-		});
-
-		let bank = new Promise (function(myResolve,myReject) {
-			Game.ObjectsById[5].buy();
-		});
-
-		Promise.all([cursor,farm,mine,factory,bank]);
-
-		// rebuy all buildings
-		l('storeBulkBuy').click();
-		l('storeBulk1').click();
-		
-		Game.ObjectsById[0].buy(zero);
-		Game.ObjectsById[2].buy(twoo);
-		Game.ObjectsById[3].buy(thre);
-		Game.ObjectsById[4].buy(four);
-		Game.ObjectsById[5].buy(five);
+				// rebuy all buildings
+				l('storeBulkBuy').click();
+				l('storeBulk1').click();
+				Game.ObjectsById[buildingList[theBuilding]].buy(numCurrentBuilding);
+			}
+		}
 	}
 }
