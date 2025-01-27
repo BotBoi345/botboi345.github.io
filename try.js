@@ -30,13 +30,13 @@ try {
                 
                 const buying = setInterval(buyall, 2100);
 
-                function buyall() {
+                async function buyall() {
                         
                         const buildingList = [19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0];
                                 
                         buildingList.forEach(checkbuy);
                                 
-                        function checkbuy(value) {
+                        async function checkbuy(value) {
                                 l('storeBulkBuy').click();
                                 l('storeBulk1').click();
                                 
