@@ -1,4 +1,4 @@
-Game.Notify('autoGodzamok loaded!', '', '', 2, 2);
+Game.Notify('autoGodzamok loaded!', 'autoGodzamok has been loaded successfully', [23,18], 2, 2);
 
 var godzamokInterval = setInterval(setGodzamokInterval, 200);
 
@@ -43,6 +43,7 @@ function activateGodzamok(){
 	
 // Activates godzamok continuously
 function passiveGodzamok(){
+	Game.Notify('passiveGodzamok started!', 'passiveGodzamok has started successfully', [23,18], 2, 2);
 	var passive = setInterval(function() {
 		if (Game.hasGod('ruin') && !Game.hasBuff('Devastation')) {
 			var numCurrentBuilding = Game.ObjectsById[2].amount;
@@ -62,6 +63,7 @@ function passiveGodzamok(){
 		var ee = e.which;
 		var l = String.fromCharCode(ee).toLowerCase();
 		if (l == '/') {
+			Game.Notify('passiveGodzamok stopped!', 'passiveGodzamok has stopped successfully', [23,18], 2, 2);
 			clearInterval(passive);
 		}
 	}
