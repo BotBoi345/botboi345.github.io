@@ -59,7 +59,8 @@ function passiveGodzamok(){
 	}, 100);
 
 	function stopInterval(e) {
-		var l = String.fromCharCode(e.which).toLowerCase();
+		var ee = e.which;
+		var l = String.fromCharCode(ee).toLowerCase();
 		if (l == '/') {
 			clearInterval(passive);
 		}
