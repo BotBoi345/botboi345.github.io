@@ -66,5 +66,5 @@ function passiveGodzamok(){
 		}
 	}
 		
-	document.onkeypress = stopInterval(e);
+	document.onkeypress = stopInterval();
 }
