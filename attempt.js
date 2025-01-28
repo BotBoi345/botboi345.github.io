@@ -1,3 +1,5 @@
+Game.Notify('tryGodzamok loaded!', 'tryGodzamok has been loaded successfully', [23,18], 2, 2);
+
 var godzamokInterval = setInterval(setGodzamokInterval, 200);
 
 function setGodzamokInterval(){
