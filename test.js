@@ -67,8 +67,3 @@ function passiveGodzamok(){
 		
 	document.onkeypress = stopInterval();
 }
-	
-	function stopInterval() {
-		clearInterval(passive);
-	}
-}
