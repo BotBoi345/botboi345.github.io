@@ -20,7 +20,6 @@ try {
 
         // second function
         function buy10(s) {
-                if (s !== 0) {s = 1; }
                 
                 Game.Notify(`BuyAll Started`,`Buying All Buildings I Can!`,[2,6],2,2);
                 
@@ -41,15 +40,17 @@ try {
                                         Game.Notify(`Bought ${Game.ObjectsById[value].dname}s`,'','',1,1);
                                 }
                         }
-
-                        if (i == s) {
+                }
+                function Press(e) {
+	        	var ee = e.which;
+	        	var l = String.fromCharCode(ee).toLowerCase();
+	        	if (l == '/') {
                                 Game.Notify(`BuyAll Stopped`,`Stopped Buying All Buildings I Can!`,[2,6],5,5);
                                 clearInterval(buying);
-                        }
-                        else {
-                                i++;
-                        }
-                }
+	        	}
+	        }
+			
+        	document.onkeypress = Press;
         }
 }
 catch(err) {
