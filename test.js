@@ -57,6 +57,16 @@ function passiveGodzamok(){
 			Game.ObjectsById[2].buy(numCurrentBuilding);
 		}
 	}, 100);
+
+	function stopInterval(e) {
+		var l = String.fromCharCode(e.which).toLowerCase();
+		if (l == '/') {
+			clearInterval(passive);
+		}
+	}
+		
+	document.onkeypress = stopInterval();
+}
 	
 	function stopInterval() {
 		clearInterval(passive);
