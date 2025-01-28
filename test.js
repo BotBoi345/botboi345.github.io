@@ -40,3 +40,25 @@ function activateGodzamok(){
 		Game.ObjectsById[0].buy(numCurrentBuilding);
 	}
 }
+
+// Activates godzamok continuously
+function passiveGodzamok(){
+	var passive = setInterval(function() {
+		if(Game.hasGod('ruin') && !Game.hasBuff('Devastation')){
+			var numCurrentBuilding = Game.ObjectsById[2].amount;
+		
+			l('storeBulkSell').click();
+			l('storeBulkMax').click();
+			Game.ObjectsById[2].buy();
+
+			// rebuy all buildings
+			l('storeBulkBuy').click();
+			l('storeBulk1').click();
+			Game.ObjectsById[2].buy(numCurrentBuilding);
+		}
+	}, 1000);
+	
+	function stopInterval() {
+		clearInterval(passive);
+	}
+}
