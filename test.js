@@ -1,6 +1,6 @@
 Game.Notify('autoGodzamok loaded!', '', '', 2, 2);
 
-var godzamokInterval = setInterval(setGodzamokInterval, 100);
+var godzamokInterval = setInterval(setGodzamokInterval, 200);
 
 function setGodzamokInterval(){
 	if(Game.hasGod('ruin')){
@@ -56,7 +56,7 @@ function passiveGodzamok(){
 			l('storeBulk1').click();
 			Game.ObjectsById[2].buy(numCurrentBuilding);
 		}
-	}, 1000);
+	}, 100);
 	
 	function stopInterval() {
 		clearInterval(passive);
